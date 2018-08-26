@@ -101,7 +101,7 @@ $(function() {
       var category = $(this).attr("data-category")
       var formattedCat = category.replace(" ", "-").toLowerCase()
 
-      $(this).closest('li').appendTo('#' + 'formattedCat')
+      $(this).closest('li').appendTo('#' + formattedCat)
 
       $.post('/todos/' + id + '/' + category).done(function(){});
     })
@@ -173,10 +173,15 @@ $(function() {
 
     var category = fakeCategorize()
 
-    $.post('/todos', todoText).done(function(lists) {
-      addToList(category, input.val());
-      input.val("");
+    if($("#todo-input").val() === ""){
+      $("#error-message-text").text("You don't need to make a Todo to do nothing!").slideDown(400);
+    } else {
+      $.post('/todos', todoText).done(function(lists) {
+        addToList(category, input.val());
+        $("#todo-input").val("")
+        $("#error-message-text").slideUp(400);
+      })
+    }
 
-    });
   });
 });
