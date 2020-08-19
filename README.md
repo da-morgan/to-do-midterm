@@ -1,6 +1,6 @@
 # todo
 
-Smart todo list that automatically categorizes your todos. The Google Natural Language API is used to produce the category. This project uses jQuery, Bootstrap, Express, EJS, Knex/PostgreSQL, Bootstrap, Sass.
+Smart todo list that automatically categorizes your todos. The Google Natural Language API is used to produce the category. This project uses jQuery, Bootstrap, Express, EJS, Knex/PostgreSQL, Sass.
 
 ## Final Product
 
